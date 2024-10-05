@@ -4,6 +4,11 @@ output "bastion_public_ip" {
 output "private_ec2_private_ip" {
   value = module.ec2.private_ec2_private_ip
 }
+output "private_ec2_02_private_ip" {
+  value = module.ec2.private_ec2_02_private_ip
+  
+}
+
 output "vpc_peering_connection_id" {
   value = module.vpc_peering.vpc_peering_connection_id
 }
