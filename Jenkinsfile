@@ -17,7 +17,7 @@ pipeline {
             steps {
                 // Check out the repository with Terraform code
                 git branch: 'main', 
-                    url: 'https://github.com/kshamata7/Redis_Demo_Final.git'
+                    url: 'https://github.com/kshamata7/project_redis.git'
             }
         }
         stage('Terraform Init') {
@@ -119,7 +119,7 @@ pipeline {
                             """
 
                             sh '''
-                            ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i inventory /var/lib/jenkins/workspace/Redis/playbook.yml
+                            ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i inventory /var/lib/jenkins/workspace/Redis02/playbook.yml
                             '''
                         } else {
                             error "One or both of the IP files (bastion_ip.txt, redis_ip.txt) were not found!"
