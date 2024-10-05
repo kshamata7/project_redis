@@ -90,7 +90,7 @@ resource "aws_security_group" "bastion_sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["<YOUR_TRUSTED_IP_RANGE>"]  # Restrict SSH to trusted IPs
+    cidr_blocks = ["0.0.0.0/0"]  # Restrict SSH to trusted IPs
   }
 
   egress {
@@ -116,14 +116,14 @@ resource "aws_security_group" "private_sg" {
     from_port   = 6379
     to_port     = 6379
     protocol    = "tcp"
-    cidr_blocks = ["<YOUR_TRUSTED_IP_RANGE>"]  # Restrict Redis port
+    cidr_blocks = ["0.0.0.0/0"]  # Restrict Redis port
   }
 
   ingress {
     from_port   = 5432
     to_port     = 5432
     protocol    = "tcp"
-    cidr_blocks = ["<YOUR_TRUSTED_IP_RANGE>"]  # Restrict Postgres port
+    cidr_blocks = ["0.0.0.0/0"]  # Restrict Postgres port
   }
 
   egress {
