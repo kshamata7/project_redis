@@ -34,3 +34,8 @@ output "bastion_sg_id" {
 output "private_sg_id" {
   value = aws_security_group.private_sg.id
 }
+
+output "private_subnet_02_id" {
+  value = aws_subnet.private_subnet_02.id  # Ensure this references the correct subnet resource
+}
+
