@@ -41,7 +41,7 @@ resource "aws_instance" "private_ec2_02" {  # Renamed for uniqueness
   ami           = "ami-0a0e5d9c7acc336f1"
   instance_type = "t3.medium"
   key_name      = var.key_name
-  subnet_id     = var.private_subnet_02  # Ensure consistency with variables
+  subnet_id     = var.private_subnet_02_id  # Ensure consistency with variables
   security_groups = [var.private_sg_id]  # Updated
 
   root_block_device {
