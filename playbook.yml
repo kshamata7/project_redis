@@ -1,0 +1,13 @@
+---
+- hosts: bastion
+  become: true
+  vars:
+    bastionIp: "{{ lookup('file', '/var/lib/jenkins/workspace/Redis/terraform/bastion_ip.txt') }}"
+    redisIp: "{{ lookup('file', '/var/lib/jenkins/workspace/Redis/terraform/redis_ip.txt') }}"
+    redisIp02: "{{ lookup('file', '/var/lib/jenkins/workspace/Redis/terraform/redis_ip02.txt') }}"
+  roles:
+    - nginx
+- hosts: Redis
+  become: yes
+  roles:
+    - redis_install

@@ -1,0 +1,4 @@
+---
+# defaults file for redis_role
+redis_package: "redis-server"
+
