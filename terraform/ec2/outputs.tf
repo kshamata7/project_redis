@@ -5,3 +5,8 @@ output "bastion_public_ip" {
 output "private_ec2_private_ip" {
   value = aws_instance.private_ec2.private_ip
 }
+
+output "private_ec2_02_private_ip" {
+  value = aws_instance.private_ec2_02.private_ip
+  
+}
